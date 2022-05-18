@@ -1,27 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
+import { Routes, Route } from "react-router-dom";
 
-import {Container} from 'react-bootstrap'
-
-import Header from './components/header/header.component';
-import Footer from './components/footer/footer.component';
+import HomeScreen from "./screens/homescreen";
+import ProductScreen from "./screens/productscreen";
 
 class App extends Component {
-
   render() {
     return (
-      <>
-      <Header />
-      <div className="App">
-        <Container>
-        <h1>Hello</h1>
-
-        </Container>
-      </div>
-      <Footer />
-      </>
-  );
+      <Routes>
+        <Route exact path="/" element={<HomeScreen />} />
+        <Route exact path="/product/:id" element={<ProductScreen />} />
+      </Routes>
+    );
   }
-  
 }
 
 export default App;
