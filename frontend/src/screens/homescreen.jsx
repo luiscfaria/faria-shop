@@ -1,12 +1,26 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Container } from "react-bootstrap";
+import axios from 'axios';
+
+
 import Product from "../components/product/product.component.jsx";
-import products from "../products.js";
 import Header from "../components/header/header.component.jsx";
 import Footer from "../components/footer/footer.component.jsx";
 
-class HomeScreen extends Component {
-  render() {
+const HomeScreen = () => {
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=> {
+    const fetchProducts = async () => {
+      const res = await axios.get('/api/products');
+      setProducts(res.data);
+    }
+
+    fetchProducts()
+  }, [])
+
+  
     return (
       <>
         <Header />
@@ -25,7 +39,7 @@ class HomeScreen extends Component {
         <Footer />
       </>
     );
-  }
+  
 }
 
 export default HomeScreen;

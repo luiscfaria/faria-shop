@@ -14,8 +14,8 @@ class Header extends Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/cart"><i class="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
-              <Nav.Link href="/login"><i class="fa-solid fa-user"></i> Log In</Nav.Link>              
+              <Nav.Link href="/cart"><i className="fa-solid fa-cart-shopping"></i> Cart</Nav.Link>
+              <Nav.Link href="/login"><i className="fa-solid fa-user"></i> Log In</Nav.Link>              
             </Nav>
           </Navbar.Collapse>
         </Container>
