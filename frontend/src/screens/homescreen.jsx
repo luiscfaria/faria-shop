@@ -1,32 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
-import axios from 'axios';
-
+import { listProducts } from "../actions/productActions.js";
 
 import Product from "../components/product/product.component.jsx";
 import Header from "../components/header/header.component.jsx";
 import Footer from "../components/footer/footer.component.jsx";
+import Loader from '../components/loader/loader.component.js'
+import Message from '../components/message/message.component.js'
 
 const HomeScreen = () => {
+  const dispatch = useDispatch();
 
-  const [products, setProducts] = useState([]);
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
 
-  useEffect(()=> {
-    const fetchProducts = async () => {
-      const res = await axios.get('/api/products');
-      setProducts(res.data);
-    }
+  useEffect(() => {
+    dispatch(listProducts());
+  }, [dispatch]);
 
-    fetchProducts()
-  }, [])
-
-  
-    return (
-      <>
-        <Header />
-        <Container>
-          <div className="py-3">
-            <h1>Latest Products</h1>
+  return (
+    <>
+      <Header />
+      <Container>
+        <div className="py-3">
+          <h1>Latest Products</h1>
+          {loading ? <Loader/> : error ? <Message variant='danger'>{error}</Message> : (
             <Row>
               {products.map((product) => (
                 <Col sm={12} md={6} lg={4} xl={3}>
@@ -34,12 +33,12 @@ const HomeScreen = () => {
                 </Col>
               ))}
             </Row>
-          </div>
-        </Container>
-        <Footer />
-      </>
-    );
-  
-}
+          )}
+        </div>
+      </Container>
+      <Footer />
+    </>
+  );
+};
 
 export default HomeScreen;
