@@ -23,7 +23,7 @@ import Footer from "../components/footer/footer.component.jsx";
 
 const ProductScreen = () => {
   const { id } = useParams();
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const productDetails = useSelector(state => state.productDetails)
@@ -33,7 +33,7 @@ const ProductScreen = () => {
   useEffect(()=> {
     dispatch(listProductDetails(id))
     
-  }, [dispatch])
+  }, [dispatch, id])
 
   const addToCartHandler = () => {
     navigate(`/cart/${id}?quantity=${quantity}`)
