@@ -5,6 +5,7 @@ import HomeScreen from "./screens/homescreen";
 import ProductScreen from "./screens/productscreen";
 import CartScreen from "./screens/cartscreen";
 import LoginScreen from './screens/loginscreen'
+import RegisterScreen from './screens/registerScreen'
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Route exact path="/cart/" element={<CartScreen />} />
         <Route exact path="/cart/:id" element={<CartScreen />} />
         <Route exact path="/login" element={<LoginScreen />} />
+        <Route exact path="/register" element={<RegisterScreen />} />
       </Routes>
     );
   }
