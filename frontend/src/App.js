@@ -7,6 +7,9 @@ import CartScreen from "./screens/cartscreen";
 import LoginScreen from './screens/loginscreen'
 import RegisterScreen from './screens/registerScreen'
 import ProfileScreen from './screens/profilescreen'
+import ShippingScreen from './screens/shippingscreen'
+import PaymentScreen from './screens/paymentscreen'
+import PlaceOrderScreen from './screens/placeorderscreen'
 
 class App extends Component {
   render() {
@@ -19,6 +22,9 @@ class App extends Component {
         <Route exact path="/login" element={<LoginScreen />} />
         <Route exact path="/register" element={<RegisterScreen />} />
         <Route exact path="/profile" element={<ProfileScreen />} />
+        <Route exact path="/shipping" element={<ShippingScreen />} />
+        <Route exact path="/payment" element={<PaymentScreen />} />
+        <Route exact path="/placeorder" element={<PlaceOrderScreen />} />
       </Routes>
     );
   }

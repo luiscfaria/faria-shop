@@ -24,6 +24,9 @@ const CartScreen = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
+  const userLogin = useSelector((state) => state.userLogin)
+  const { loading, error, userInfo } = userLogin
+
   const quantity = searchParams.get("quantity");
 
   const dispatch = useDispatch();
@@ -42,7 +45,11 @@ const CartScreen = () => {
   }
 
   const checkoutHandler = () => {
-    navigate('/login?redirect=shipping')
+    if (userInfo) {
+      navigate("/shipping")
+    } else {
+      navigate('/login')
+    }
   }
 
   return (
@@ -120,7 +127,7 @@ const CartScreen = () => {
                       {cartItems.reduce((acc, item) => acc + Number(item.quantity), 0)})
                       items
                     </h2>
-                      ${cartItems.reduce((acc, item) => acc + Number(item.quantity) * Number(item.price), 0).toFixed(2)}
+                    ${cartItems.reduce((acc, item) => acc + Number(item.quantity) * Number(item.price), 0).toFixed(2)}
                   </ListGroup.Item>
                   <ListGroup.Item>
                     <Button
