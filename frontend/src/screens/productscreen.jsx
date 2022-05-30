@@ -9,7 +9,6 @@ import {
   ListGroup,
   Card,
   Button,
-  ListGroupItem,
   Form
 } from "react-bootstrap";
 import {listProductDetails} from '../actions/productActions.js'

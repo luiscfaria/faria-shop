@@ -10,6 +10,7 @@ import ProfileScreen from './screens/profilescreen'
 import ShippingScreen from './screens/shippingscreen'
 import PaymentScreen from './screens/paymentscreen'
 import PlaceOrderScreen from './screens/placeorderscreen'
+import OrderScreen from "./screens/orderscreen";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
         <Route exact path="/shipping" element={<ShippingScreen />} />
         <Route exact path="/payment" element={<PaymentScreen />} />
         <Route exact path="/placeorder" element={<PlaceOrderScreen />} />
+        <Route exact path="/orders/:id" element={<OrderScreen />} />
       </Routes>
     );
   }
