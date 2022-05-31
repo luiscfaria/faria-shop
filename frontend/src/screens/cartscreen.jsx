@@ -10,13 +10,11 @@ import {
   Button,
   Card,
   Container,
-  ListGroupItem,
 } from "react-bootstrap";
 import { addToCart, removeFromCart } from "../actions/cartActions";
 
 import Header from "../components/header/header.component.jsx";
 import Footer from "../components/footer/footer.component.jsx";
-import Loader from "../components/loader/loader.component.js";
 import Message from "../components/message/message.component.js";
 
 const CartScreen = () => {

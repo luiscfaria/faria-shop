@@ -13,7 +13,7 @@ import { login } from '../actions/userActions'
 const LoginScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

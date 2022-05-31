@@ -17,7 +17,7 @@ const RegisterScreen = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

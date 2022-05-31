@@ -12,8 +12,7 @@ import { createOrder } from '../actions/orderActions'
 
 const PlaceOrderScreen = () => {
     const cart = useSelector((state) => state.cart)
-    const { shippingAddress } = cart
-
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
