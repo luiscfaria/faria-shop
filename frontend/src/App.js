@@ -13,6 +13,9 @@ import PlaceOrderScreen from './screens/placeorderscreen'
 import OrderScreen from "./screens/orderscreen";
 import UserListScreen from "./screens/userlistscreen";
 import UserEditScreen from "./screens/usereditscreen";
+import ProductListScreen from "./screens/productlistscreen";
+import ProductEditScreen from "./screens/producteditscreen";
+import OrderListScreen from "./screens/orderlistscreen";
 
 
 class App extends Component {
@@ -32,6 +35,9 @@ class App extends Component {
         <Route exact path="/orders/:id" element={<OrderScreen />} />
         <Route exact path="/admin/userlist" element={<UserListScreen />} />
         <Route exact path="/admin/user/:id/edit" element={<UserEditScreen />} />
+        <Route exact path="/admin/productlist" element={<ProductListScreen />} />
+        <Route exact path="/admin/product/:id/edit" element={<ProductEditScreen />} />
+        <Route exact path="/admin/orderlist" element={<OrderListScreen />} />
       </Routes>
     );
   }
