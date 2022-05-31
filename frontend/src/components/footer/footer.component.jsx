@@ -12,7 +12,7 @@ class Footer extends Component {
             <Container>
                 <Row>
                     <Col className='text-center py-3'>
-                        Copyright &copy; Faria Shop
+                        Copyright &copy; Faria Frames
                     </Col>
                 </Row>
             </Container>

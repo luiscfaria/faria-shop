@@ -23,6 +23,7 @@ class App extends Component {
     return (
       <Routes>
         <Route exact path="/" element={<HomeScreen />} />
+        <Route exact path="/search/:keyword" element={<HomeScreen />} />
         <Route exact path="/product/:id" element={<ProductScreen />} />
         <Route exact path="/cart/" element={<CartScreen />} />
         <Route exact path="/cart/:id" element={<CartScreen />} />
