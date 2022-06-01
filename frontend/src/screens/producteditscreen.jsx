@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   listProductDetails,
@@ -24,7 +24,6 @@ const ProductEditScreen = () => {
   const [category, setCategory] = useState("");
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
-  //   const [uploading, setUploading] = useState(false)
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -93,7 +92,7 @@ const ProductEditScreen = () => {
             <Message variant="danger">{error}</Message>
           ) : (
             <Form onSubmit={submitHandler}>
-              <Form.Group controlId="name">
+              <Form.Group controlId="name" className="my-2">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
                   type="name"
@@ -103,7 +102,7 @@ const ProductEditScreen = () => {
                 ></Form.Control>
               </Form.Group>
 
-              <Form.Group controlId="price">
+              <Form.Group controlId="price" className="my-2">
                 <Form.Label>Price</Form.Label>
                 <Form.Control
                   type="number"
@@ -113,7 +112,7 @@ const ProductEditScreen = () => {
                 ></Form.Control>
               </Form.Group>
 
-              <Form.Group controlId="image">
+              <Form.Group controlId="image" className="my-2">
                 <Form.Label>Image</Form.Label>
                 <Form.Control
                   type="text"
@@ -121,16 +120,9 @@ const ProductEditScreen = () => {
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
                 ></Form.Control>
-                {/* <Form.File
-                id='image-file'
-                label='Choose File'
-                custom
-                onChange={uploadFileHandler}
-              ></Form.File>
-              {uploading && <Loader />} */}
               </Form.Group>
 
-              <Form.Group controlId="brand">
+              <Form.Group controlId="brand" className="my-2">
                 <Form.Label>Brand</Form.Label>
                 <Form.Control
                   type="text"
@@ -140,7 +132,7 @@ const ProductEditScreen = () => {
                 ></Form.Control>
               </Form.Group>
 
-              <Form.Group controlId="countInStock">
+              <Form.Group controlId="countInStock" className="my-2">
                 <Form.Label>Count In Stock</Form.Label>
                 <Form.Control
                   type="number"
@@ -150,7 +142,7 @@ const ProductEditScreen = () => {
                 ></Form.Control>
               </Form.Group>
 
-              <Form.Group controlId="category">
+              <Form.Group controlId="category" className="my-2">
                 <Form.Label>Category</Form.Label>
                 <Form.Control
                   type="text"
@@ -160,7 +152,7 @@ const ProductEditScreen = () => {
                 ></Form.Control>
               </Form.Group>
 
-              <Form.Group controlId="description">
+              <Form.Group controlId="description" className="my-2">
                 <Form.Label>Description</Form.Label>
                 <Form.Control
                   type="text"
@@ -170,7 +162,7 @@ const ProductEditScreen = () => {
                 ></Form.Control>
               </Form.Group>
 
-              <Button type="submit" variant="primary">
+              <Button type="submit" variant="dark" className="my-2">
                 Update
               </Button>
             </Form>

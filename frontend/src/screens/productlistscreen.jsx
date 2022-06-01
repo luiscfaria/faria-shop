@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import { Table, Button, Container, Row, Col } from "react-bootstrap";
@@ -16,7 +16,7 @@ const ProductListScreen = () => {
   const navigate = useNavigate();
 
   const productList = useSelector((state) => state.productList);
-  const { loading, error, products, page, pages } = productList;
+  const { loading, error, products} = productList;
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -50,6 +50,7 @@ const ProductListScreen = () => {
     }
   }, [
     dispatch,
+    navigate,
     userInfo,
     successDelete,
     successCreate,
@@ -69,14 +70,14 @@ const ProductListScreen = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container className="my-3">
         <Row className="align-items-center">
           <Col>
             <h1>Products</h1>
           </Col>
-          <Col className="text-right">
-            <Button className="my-3" onClick={createProductHandler}>
-              <i className="fas fa-plus"></i> Create Product
+          <Col className="text-right d-flex justify-content-end">
+            <Button className="my-3" variant='primary' onClick={createProductHandler}>
+              <i className="fas fa-plus" style={{color: 'white'}}></i> Create Product
             </Button>
           </Col>
         </Row>
@@ -114,22 +115,21 @@ const ProductListScreen = () => {
                     <td>
                       <LinkContainer to={`/admin/product/${product._id}/edit`}>
                         <Button variant="light" className="btn-sm">
-                          <i className="fas fa-edit"></i>
+                          <i className="fas fa-edit" style={{color: 'black'}}></i>
                         </Button>
                       </LinkContainer>
                       <Button
-                        variant="danger"
+                        variant="primary"
                         className="btn-sm"
                         onClick={() => deleteHandler(product._id)}
                       >
-                        <i className="fas fa-trash"></i>
+                        <i className="fas fa-trash" style={{color: 'white'}}></i>
                       </Button>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </Table>
-            {/* <Paginate pages={pages} page={page} isAdmin={true} /> */}
           </>
         )}
       </Container>

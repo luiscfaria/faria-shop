@@ -16,6 +16,7 @@ import {
   PRODUCT_UPDATE_FAIL,
 } from "../constants/productConstants.js";
 import axios from 'axios';
+import { logout } from "./userActions.js";
 
 export const listProducts = (keyword = '') => async (dispatch) => {
   try {
@@ -86,7 +87,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
         ? error.response.data.message
         : error.message
     if (message === 'Not authorized, token failed') {
-      // dispatch(logout())
+      dispatch(logout())
     }
     dispatch({
       type: PRODUCT_DELETE_FAIL,
@@ -123,7 +124,7 @@ export const createProduct = () => async (dispatch, getState) => {
         ? error.response.data.message
         : error.message
     if (message === 'Not authorized, token failed') {
-      // dispatch(logout())
+      dispatch(logout())
     }
     dispatch({
       type: PRODUCT_CREATE_FAIL,
@@ -166,7 +167,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
         ? error.response.data.message
         : error.message
     if (message === 'Not authorized, token failed') {
-      // dispatch(logout())
+      dispatch(logout())
     }
     dispatch({
       type: PRODUCT_UPDATE_FAIL,

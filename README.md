@@ -13,15 +13,15 @@ This is project of an art eCommerce.
 
 - Live Site URL: https://......app/
 
-## My process
+## Features
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
+- React.js
+- Bootstrap
+- Node.js
+- Express.js
+- MongoDB
 
 
 ## Author

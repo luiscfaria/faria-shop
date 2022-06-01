@@ -70,8 +70,6 @@ const ProductScreen = () => {
                     Description: {product.description}
                   </ListGroup.Item>
                 </ListGroup>
-              {/* </Col> */}
-              {/* <Col md={3}> */}
                 <Card className="mt-4">
                   <ListGroup variant="flush">
                     <ListGroup.Item>

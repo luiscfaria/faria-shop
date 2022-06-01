@@ -19,6 +19,7 @@ import {
     ORDER_DELIVER_SUCCESS,
     ORDER_DELIVER_REQUEST,
   } from '../constants/orderConstants'
+  import { logout } from './userActions'
 
   export const createOrder = (order) => async (dispatch, getState) => {
     try {
@@ -43,10 +44,6 @@ import {
         type: ORDER_CREATE_SUCCESS,
         payload: data,
       })
-      // dispatch({
-      //   type: CART_CLEAR_ITEMS,
-      //   payload: data,
-      // })
       localStorage.removeItem('cartItems')
     } catch (error) {
       const message =
@@ -54,7 +51,7 @@ import {
           ? error.response.data.message
           : error.message
       if (message === 'Not authorized, token failed') {
-        // dispatch(logout())
+        dispatch(logout())
       }
       dispatch({
         type: ORDER_CREATE_FAIL,
@@ -91,7 +88,7 @@ import {
           ? error.response.data.message
           : error.message
       if (message === 'Not authorized, token failed') {
-        // dispatch(logout())
+        dispatch(logout())
       }
       dispatch({
         type: ORDER_DETAILS_FAIL,
@@ -136,7 +133,7 @@ import {
           ? error.response.data.message
           : error.message
       if (message === 'Not authorized, token failed') {
-        // dispatch(logout())
+        dispatch(logout())
       }
       dispatch({
         type: ORDER_PAY_FAIL,
@@ -182,7 +179,7 @@ import {
           ? error.response.data.message
           : error.message
       if (message === 'Not authorized, token failed') {
-        // dispatch(logout())
+        dispatch(logout())
       }
       dispatch({
         type: ORDER_DELIVER_FAIL,
@@ -223,7 +220,7 @@ import {
           ? error.response.data.message
           : error.message
       if (message === 'Not authorized, token failed') {
-        // dispatch(logout())
+        dispatch(logout())
       }
       dispatch({
         type: ORDER_LIST_MY_FAIL,
@@ -260,7 +257,7 @@ import {
           ? error.response.data.message
           : error.message
       if (message === 'Not authorized, token failed') {
-        // dispatch(logout())
+        dispatch(logout())
       }
       dispatch({
         type: ORDER_LIST_FAIL,
