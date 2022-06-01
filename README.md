@@ -4,7 +4,7 @@ This is project of an art eCommerce.
 
 ## Overview
 
-### Screenshot
+### Screenshot - Home Screen
 
 ![Desktop Design](/app-images/homescreen.PNG)
 
@@ -13,7 +13,7 @@ This is project of an art eCommerce.
 
 - Live Site URL: https://......app/
 
-## Features
+## Technologies
 
 ### Built with
 
@@ -22,11 +22,37 @@ This is project of an art eCommerce.
 - Node.js
 - Express.js
 - MongoDB
+- Mongoose ODM
+- Paypal Payment API
+
+### Features
+
+- Shopping Cart
+- User Profile
+- User Orders
+- Admin Profile
+- Admin User Management
+- Admin Order Management
+- Admin Product Management
+- Check out process
+- Payment process
+
+### Screenshot - Product Screen
+
+![Product Screen](/app-images/productscreen.PNG)
+
+### Screenshot - Order Screen
+
+![order Screen](/app-images/orderscreen.PNG)
+
+### Screenshot - Admin Product Management Screen
+
+![Product List Screen](/app-images/productlistscreen.PNG)
 
 
 ## Author
 
 
-- Frontend Mentor - [@luiscfaria](https://github.com/luiscfaria)
+- Luis Faria - [@luiscfaria](https://github.com/luiscfaria)
 
 
