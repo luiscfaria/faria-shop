@@ -85,7 +85,7 @@ const OrderScreen = () => {
   return (
     <>
       <Header />
-      <Container className="py-3">
+      <Container className="my-3">
         {loading ? (
           <Loader />
         ) : error ? (
@@ -103,12 +103,12 @@ const OrderScreen = () => {
                     </p>
                     <p>
                       <strong>Email: </strong>{" "}
-                      <a href={`mailto:${order.user.email}`}>
+                      <a href={`mailto:${order.user.email}`} style={{color: 'black'}}>
                         {order.user.email}
                       </a>
                     </p>
                     <p>
-                      <strong>Address:</strong>
+                      <strong className="me-2">Address:</strong>
                       {order.shippingAddress.address},{" "}
                       {order.shippingAddress.city}{" "}
                       {order.shippingAddress.postalCode},{" "}
@@ -156,7 +156,7 @@ const OrderScreen = () => {
                                 />
                               </Col>
                               <Col>
-                                <Link to={`/product/${item.product}`}>
+                                <Link to={`/product/${item.product}`} style={{color: 'black'}}>
                                   {item.name}
                                 </Link>
                               </Col>

@@ -83,7 +83,7 @@ const ProfileScreen = () => {
                   ></Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId="email">
+                <Form.Group controlId="email" className="my-2">
                   <Form.Label>Email Address</Form.Label>
                   <Form.Control
                     type="email"
@@ -93,7 +93,7 @@ const ProfileScreen = () => {
                   ></Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId="password">
+                <Form.Group controlId="password" className="my-2">
                   <Form.Label>Password</Form.Label>
                   <Form.Control
                     type="password"
@@ -103,7 +103,7 @@ const ProfileScreen = () => {
                   ></Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId="confirmPassword">
+                <Form.Group controlId="confirmPassword" className="my-2">
                   <Form.Label>Confirm Password</Form.Label>
                   <Form.Control
                     type="password"
@@ -113,7 +113,7 @@ const ProfileScreen = () => {
                   ></Form.Control>
                 </Form.Group>
 
-                <Button type="submit" variant="primary">
+                <Button type="submit" variant="dark">
                   Update
                 </Button>
               </Form>

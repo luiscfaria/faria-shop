@@ -7,12 +7,12 @@ import { listProducts } from "../actions/productActions.js";
 import Product from "../components/product/product.component.jsx";
 import Header from "../components/header/header.component.jsx";
 import Footer from "../components/footer/footer.component.jsx";
-import Loader from '../components/loader/loader.component.js'
-import Message from '../components/message/message.component.js'
+import Loader from "../components/loader/loader.component.js";
+import Message from "../components/message/message.component.js";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const keyword = useParams()
+  const keyword = useParams();
 
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
@@ -25,10 +25,23 @@ const HomeScreen = () => {
     <>
       <Header />
       <Container>
-        <div className="py-5">
-          <h1>Discover curator-approved collector favorites</h1>
-          {loading ? <Loader/> : error ? <Message variant='danger'>{error}</Message> : (
-            <Row>
+        <div>
+          <Row
+            className='my-4'
+            style={{
+              backgroundImage: `url("https://images.pexels.com/photos/889839/pexels-photo-889839.jpeg")`,
+              height: '30vh',
+              backgroundPosition: '-50%',
+              backgroundSize: 'cover'
+            }}
+            > </Row>
+            <h1>Discover curator-approved collector favorites</h1>
+          {loading ? (
+            <Loader />
+          ) : error ? (
+            <Message variant="danger">{error}</Message>
+          ) : (
+            <Row className="justify-content-md-center">
               {products.map((product) => (
                 <Col sm={12} md={6} lg={4} xl={3}>
                   <Product product={product} />

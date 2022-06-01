@@ -26,21 +26,28 @@ const Header = () => {
       collapseOnSelect
     >
       <Container>
-        <Navbar.Brand href="/">Faria Frames</Navbar.Brand>
+        <Navbar.Brand className='brand' href="/">
+          <div className="logo">
+            <img
+              className="logo-img"
+              src={require("../../images/logo2.png")}
+              alt="logo"
+            />
+          </div>
+          
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          
-            {/* <SearchBox /> */}
-          
+          {/* <SearchBox /> */}
 
           <Nav className="ms-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/cart">
+            <Nav.Link href="/" style={{color: 'white'}}>Home</Nav.Link>
+            <Nav.Link href="/cart" style={{color: 'white'}}>
               <i className="fa-solid fa-cart-shopping"></i> Cart
-            </Nav.Link>
+            </Nav.Link >
             {userInfo ? (
-              <NavDropdown title={userInfo.name} id="username">
-                <LinkContainer to="/profile">
+              <NavDropdown style={{color: 'white'}} title={userInfo.name} id="username">
+                <LinkContainer to="/profile" >
                   <NavDropdown.Item>Profile</NavDropdown.Item>
                 </LinkContainer>
                 <NavDropdown.Item onClick={logoutHandler}>
@@ -48,7 +55,7 @@ const Header = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <Nav.Link href="/login">
+              <Nav.Link href="/login" style={{color: 'white'}}>
                 <i className="fa-solid fa-user"></i> Sign In
               </Nav.Link>
             )}
