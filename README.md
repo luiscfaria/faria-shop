@@ -1,27 +1,17 @@
-# Frontend Mentor - QR code component solution
+# Faria Curated Art
 
-This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
-
-## Table of contents
-
-- [Overview](#overview)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Author](#author)
-
+This is project of an art eCommerce. 
 
 ## Overview
 
 ### Screenshot
 
-![Desktop Design](/images/desktop-design.jpg)
+![Desktop Design](/app-images/homescreen.PNG)
 
 
 ### Links
 
-- Live Site URL: https://qrchallenge.vercel.app/
+- Live Site URL: https://......app/
 
 ## My process
 
@@ -37,6 +27,6 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 ## Author
 
 
-- Frontend Mentor - [@luiscfaria](https://www.frontendmentor.io/profile/luiscfaria)
+- Frontend Mentor - [@luiscfaria](https://github.com/luiscfaria)
 
 
