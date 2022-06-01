@@ -11,7 +11,7 @@ This is project of an art eCommerce.
 
 ### Links
 
-- Live Site URL: https://......app/
+- Live Site URL: https://fariacuratedarts.herokuapp.com/
 
 ## Technologies
 
